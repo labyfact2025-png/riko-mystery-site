@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <!-- 目的：挑戦状2問の回答受付＆判定ページ。表記ゆれ対応。共通フッター読込あり -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>挑戦状の解答｜理工展 謎解き</title>
+    <meta name="description" content="理工展パンフレット掲載の挑戦状2問の解答ページ。TIME/タイム/たいむ、喜怒哀楽/キドアイラク/きどあいらく 等の表記ゆれに対応。">
+    <link rel="stylesheet" href="assets/base.css?v=answers1">
+    <style>
+        /* ページ内の最小スタイル */
+        .answer-card {
+            padding: 16px;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .answer-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid #eee;
+            border-radius: 6px;
+        }
+
+        .answer-form {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .answer-form input {
+            flex: 1;
+            padding: 10px 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .answer-form button {
+            padding: 10px 14px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            background: #f8f8f8;
+        }
+
+        .result {
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        .ok {
+            color: #0a7a25;
+        }
+
+        .ng {
+            color: #b00020;
+
+            .answer-card h2 {
+                color: #000 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div><a href="index.html">← トップへ</a></div>
+        <nav class="nav"><a href="escape.html">脱出</a><a href="tour.html">周遊</a><a href="location.html">開催場所</a></nav>
+    </header>
+
+    <main class="container section">
+        <h1>挑戦状の解答</h1>
+        <p class="muted">パンフレット掲載の「お試し謎解き」に回答できます。</p>
+
+        <!-- 1) 未来の研究者からの挑戦状 -->
+        <section class="answer-card" aria-labelledby="q1-title">
+            <h2 id="q1-title" style="color:#000;">未来の研究者からの挑戦状</h2>
+            <figure>
+                <img src="assets/challenge-researcher.png" alt="未来の研究者からの挑戦状（問題画像）">
+            </figure>
+            <div class="answer-form">
+                <input id="ans-time" type="text" inputmode="latin" placeholder="解答を入力">
+                <button type="button" id="btn-time">解答</button>
+            </div>
+            <div id="res-time" class="result" aria-live="polite"></div>
+        </section>
+
+        <div style="height:16px"></div>
+
+        <!-- 2) 洋館の主からの挑戦状 -->
+        <section class="answer-card" aria-labelledby="q2-title">
+            <h2 id="q2-title" style="color:#000;">洋館の主からの挑戦状</h2>
+            <figure>
+                <img src="assets/challenge-mansion.png" alt="洋館の主からの挑戦状（問題画像）">
+            </figure>
+            <div class="answer-form">
+                <input id="ans-mansion" type="text" placeholder="解答を入力">
+                <button type="button" id="btn-mansion">解答</button>
+            </div>
+            <div id="res-mansion" class="result" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <!-- 共通フッター -->
+    <div id="site-footer"></div>
+    <script src="assets/include-footer.js?v=answers1" defer></script>
+
+    <script>
+        // 表記ゆれ正規化：全角→半角、小文字化、空白・句読点除去、カタカナ→ひらがな
+        function normalizeAnswer(s) {
+            if (!s) return '';
+            let t = s.trim().toLowerCase().normalize('NFKC');
+            t = t.replace(/\s+/g, '');              // 空白除去
+            t = t.replace(/[・、。,.，．]/g, '');   // 句読点・中点除去
+            // カタカナ→ひらがな
+            t = t.replace(/[\u30A1-\u30F6]/g, ch => String.fromCharCode(ch.charCodeAt(0) - 0x60));
+            return t;
+        }
+
+        // Q1: 未来の研究者… 正答は「time」
+        const okQ1 = new Set(['time', 'たいむ']); // 「タイム」は正規化で「たいむ」になる
+
+        // Q2: 洋館の主… 正答は「喜怒哀楽」
+        const okQ2 = new Set(['喜怒哀楽', 'きどあいらく']); // 「キドアイラク」は正規化で「きどあいらく」
+
+        function checkAndShow(inputId, resultId, okSet) {
+            const raw = document.getElementById(inputId).value || '';
+            const n = normalizeAnswer(raw);
+            const ok = okSet.has(n);
+            const el = document.getElementById(resultId);
+            el.className = 'result ' + (ok ? 'ok' : 'ng');
+            el.textContent = ok ? '✅ 正解！参加お待ちしています。' : '❌ 残念…もう一度挑戦してみてください。';
+        }
+
+        document.getElementById('btn-time').addEventListener('click', () => checkAndShow('ans-time', 'res-time', okQ1));
+        document.getElementById('btn-mansion').addEventListener('click', () => checkAndShow('ans-mansion', 'res-mansion', okQ2));
+
+        // Enter キーでも判定
+        document.getElementById('ans-time').addEventListener('keydown', (e) => { if (e.key === 'Enter') document.getElementById('btn-time').click(); });
+        document.getElementById('ans-mansion').addEventListener('keydown', (e) => { if (e.key === 'Enter') document.getElementById('btn-mansion').click(); });
+    </script>
+</body>
+
+</html>
