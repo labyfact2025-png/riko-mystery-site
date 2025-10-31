@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <!-- 目的：脱出/周遊の2枚のイメージで分岐。右下に「開催場所」固定ボタン。共通フッターを下部に注入 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>理工展 謎解き｜トップ ←追記箇所🚩</title>
+    <meta name="description" content="理工展で開催する2種類の謎解きイベント（脱出型／周遊型）の広報・案内サイト。スマホで簡単に閲覧できます。 ←追記箇所🚩">
+    <meta property="og:title" content="理工展 謎解き ←追記箇所🚩">
+    <meta property="og:description" content="脱出型と周遊型、2つの謎解きに挑戦！開催情報はこちら。 ←追記箇所🚩">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="assets/base.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <!-- 🚩ここから修正：テキストを残し、右にロゴを同じ高さで表示 -->
+        <a href="index.html" class="brand">
+            <strong class="brand-text">理工展 謎解き</strong>
+            <img src="assets/logo.png" alt="LabyrinthFactory ロゴ" class="brand-logo"> <!-- ←追記箇所🚩 -->
+        </a>
+        <!-- 🚩ここまで修正 -->
+        <nav class="nav">
+            <a href="escape.html">脱出</a>
+            <a href="tour.html">周遊</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="kv container">
+            <h1>怪盗の夜か、時を直す旅か。<br>今、歯車が回り出す。</h1>
+            <p class="muted">LabyrinthFactoryがお届けする極上の謎解き体験</p>
+            <div class="grid" style="margin-top:16px">
+                <a class="card" href="escape.html" aria-label="脱出型の詳細へ">
+                    <figure>
+                        <img src="assets/escape-visual.png" alt="脱出型イメージ ←追記箇所🚩（画像差し替え）">
+                        <figcaption>脱出型：洋館に伝わる秘宝を盗みだせ</figcaption>
+                    </figure>
+                </a>
+                <a class="card" href="tour.html" aria-label="周遊型の詳細へ">
+                    <figure>
+                        <img src="assets/tour-visual.png" alt="周遊型イメージ ←追記箇所🚩（画像差し替え）">
+                        <figcaption>周遊型：謎の懐中時計を直して、未来に返せ</figcaption>
+                    </figure>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- 開催場所：右下固定ボタン -->
+    <div class="fab"><a href="location.html">開催場所</a></div>
+
+    <!-- 共通フッター挿入先（この3ページのみ設置：index/escape/tour） -->
+    <div id="site-footer"></div>
+    <script src="assets/include-footer.js"></script>
+</body>
+
+</html>
