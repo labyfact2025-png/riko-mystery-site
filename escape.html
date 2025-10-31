@@ -5,49 +5,67 @@
     <!-- 目的：脱出型のストーリー/タイムテーブル/注意/概要を掲載。共通フッターあり -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>脱出型｜理工展 謎解き ←追記箇所🚩</title>
-    <meta name="description" content="理工展の脱出型謎解きの詳細（ストーリー/スケジュール/注意事項/イベント概要）。 ←追記箇所🚩">
+    <title>脱出型｜理工展 謎解き</title>
+    <meta name="description" content="理工展の脱出型謎解きの詳細（ストーリー/スケジュール/注意事項/イベント概要）。">
     <meta property="og:title" content="脱出型 謎解き">
-    <meta property="og:description" content="時間内に脱出せよ！詳細はこちら。 ←追記箇所🚩">
+    <meta property="og:description" content="時間内に脱出せよ！詳細はこちら。">
     <link rel="stylesheet" href="assets/base.css">
 </head>
 
 <body>
     <header class="header">
-        <div><a href="index.html">← トップへ</a></div>
-        <nav class="nav"><a href="tour.html">周遊</a><a href="location.html">開催場所</a></nav>
+        <a href="index.html" class="brand">
+            <strong class="brand-text">理工展 謎解き</strong>
+            <img src="assets/logo.png" alt="LabyrinthFactory ロゴ" class="brand-logo">
+        </a>
+        <nav class="nav"><a href="escape.html">脱出</a><a href="tour.html">周遊</a><a href="location.html">開催場所</a></nav>
     </header>
 
     <main class="container section">
         <h1>脱出型</h1>
-        <p class="muted">会場で行う“時間制限あり”の謎解きイベント。 ←追記箇所🚩</p>
+        <p class="muted">会場で行う“時間制限あり”の謎解きイベント。</p>
+
+        <figure class="card">
+            <img src="assets/escape-visual.png" alt="脱出型のイメージ（機械仕掛けの洋館）">
+        </figure>
 
         <h2>ストーリー</h2>
-        <p>【ストーリー本文をここに記載】 ←追記箇所🚩</p>
+        <p>
+            怪盗組織 PhantomGEAR の新人怪盗であるあなたは、初仕事として宝石を盗むために今宵とある洋館に侵入した。
+            しかし、4階建ての洋館には様々なからくりや罠が仕掛けられており、多くの仲間が脱落していった。
+            最上階にたどり着いた今、残っているのはあなたを含め、わずかな組だけ。宝石を奪い、脱出できるか？
+        </p>
 
+        <!-- 🚩ここから修正：タイムスケジュール確定版 -->
         <h2>タイムスケジュール</h2>
         <ul>
-            <li>受付開始：【時刻】 ←追記箇所🚩</li>
-            <li>説明：5分／プレイ：XX分／解説：YY分 ←追記箇所🚩</li>
-            <li>最終回開始：【時刻】 ←追記箇所🚩</li>
+            <li>受付：各回開始の<strong>5分前</strong>（時間厳守）</li>
+            <li>構成：制限時間<strong>40分</strong>／所要時間<strong>60分</strong></li>
+            <li>開始時刻：
+                <ul class="small">
+                    <li>11/1（土）：10:00／11:30／13:00／14:30／16:00</li>
+                    <li>11/2（日）：10:00／11:20／12:40／14:00</li>
+                </ul>
+            </li>
         </ul>
+        <!-- 🚩ここまで修正 -->
 
         <h2>注意事項</h2>
         <ul>
-            <li>会場内での通話・撮影ルール：【記載】 ←追記箇所🚩</li>
-            <li>ネタバレのSNS投稿は【可/不可】 ←追記箇所🚩</li>
-            <li>小学生以下は保護者同伴を推奨 ←追記箇所🚩</li>
+            <li>会場内での<strong>通話・撮影は禁止</strong>です。通話は会場外でお願いします。会話は周囲に配慮して小声で。</li>
+            <li><strong>ネタバレとなるSNS投稿は禁止</strong>です。感想など<strong>ネタバレにならない範囲</strong>の投稿はOKです。</li>
+            <li><strong>小学生以下は保護者同伴が必須</strong>です。</li>
         </ul>
 
         <h2>イベント概要</h2>
         <table>
             <tr>
                 <th>対象年齢</th>
-                <td>【例：中学生以上】 ←追記箇所🚩</td>
+                <td>7歳以上</td>
             </tr>
             <tr>
                 <th>所要時間</th>
-                <td>【例：45分】 ←追記箇所🚩</td>
+                <td>60分</td>
             </tr>
             <tr>
                 <th>ゲームタイプ</th>
@@ -55,17 +73,22 @@
             </tr>
             <tr>
                 <th>開催場所</th>
-                <td>【教室/会場名】 ←追記箇所🚩</td>
+                <td>53号館-401前の受付</td>
             </tr>
             <tr>
                 <th>人数</th>
-                <td>【例：1～4人】 ←追記箇所🚩</td>
+                <td>1グループ1〜6人</td>
+            </tr>
+            <tr>
+                <th>参加費</th>
+                <td>無料</td>
             </tr>
         </table>
     </main>
 
+    <!-- 共通フッター -->
     <div id="site-footer"></div>
-    <script src="assets/include-footer.js"></script>
+    <script src="assets/include-footer.js" defer></script>
 </body>
 
 </html>

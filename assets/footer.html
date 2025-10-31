@@ -1,22 +1,52 @@
-<!-- 目的：トップ/脱出/周遊ページ下部に共通で挿入するフッター（FAQ/連絡先/SNS） -->
+<!-- footer: この断片を各ページ下部の #site-footer に挿入する -->
 <div class="footer container">
+    <style>
+        .footer a.app-link {
+            color: #0d6efd;
+            text-decoration: underline;
+        }
+    </style>
+
     <h2>よくある質問（FAQ）</h2>
     <div class="grid">
-        <div class="card"><strong>Q.</strong> 予約は必要ですか？<br><strong>A.</strong> 【要/不要】です。混雑時は整理券対応となる場合があります。 ←追記箇所🚩
+        <div class="card">
+            <strong>Q.</strong> 予約は必要ですか？<br>
+            <strong>A.</strong> 周遊型は予約不要。脱出型はアプリコから予約可能です。<br>
+            iPhone：<a class="app-link"
+                href="https://apps.apple.com/jp/app/%E6%97%A9%E7%A8%B2%E7%94%B0%E5%A4%A7%E5%AD%A6%E7%90%86%E5%B7%A5%E5%B1%95%E3%83%91%E3%83%B3%E3%83%95%E3%83%AC%E3%83%83%E3%83%88%E3%82%A2%E3%83%97%E3%83%AA-%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B3/id1438321497"
+                target="_blank" rel="noopener">App Store</a><br>
+            Android：<a class="app-link"
+                href="https://play.google.com/store/apps/details?id=com.rikoten.AndroidApp2018new&pcampaignid=web_share"
+                target="_blank" rel="noopener">Google Play</a><br>
+            ※アプリ不具合時は<strong>53-401前の受付</strong>で直接予約を行います。
         </div>
-        <div class="card"><strong>Q.</strong> 対象年齢は？<br><strong>A.</strong> 目安は【○歳以上】です。小学生は保護者同伴を推奨します。 ←追記箇所🚩</div>
-        <div class="card"><strong>Q.</strong> 所要時間は？<br><strong>A.</strong> 脱出型は【○分】、周遊型は【○分】を想定しています。 ←追記箇所🚩</div>
+
+        <div class="card"><strong>Q.</strong> 対象年齢は？<br><strong>A.</strong>
+            脱出型は<strong>7歳以上</strong>、周遊型は<strong>制限なし</strong>です。</div>
+        <div class="card"><strong>Q.</strong> 所要時間は？<br><strong>A.</strong>
+            脱出型は<strong>60分</strong>、周遊型は<strong>50分</strong>です。</div>
+        <div class="card"><strong>Q.</strong> 参加費は？<br><strong>A.</strong> 両方<strong>無料</strong>です。</div>
+        <div class="card"><strong>Q.</strong> 再挑戦は？<br><strong>A.</strong> <strong>できません</strong>。</div>
+        <div class="card"><strong>Q.</strong> SNS投稿は？<br><strong>A.</strong> <strong>ネタバレにならない範囲</strong>で可。</div>
+        <div class="card"><strong>Q.</strong> 持ち物は？<br><strong>A.</strong>
+            脱出型は<strong>道具不要</strong>、周遊型は<strong>スマホ</strong>のみ（公式LINE使用）。</div>
+        <div class="card"><strong>Q.</strong> 遅刻/満席時は？<br><strong>A.</strong> <strong>5分以上の遅刻は参加不可</strong>。満席時は後の回をご案内。
+        </div>
+        <div class="card"><strong>Q.</strong> 周遊の謎が見つからない？<br><strong>A.</strong> <strong>公式LINEの指示</strong>に従ってください。
+        </div>
     </div>
 
     <h2 style="margin-top:24px;">お問い合わせ</h2>
-    <p>メール：<a href="mailto:【your@example.com】">【your@example.com】</a> ←追記箇所🚩</p>
+    <p>
+        <a class="btn"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSc8esjgpnVDQp2_Kao7QSxvav2QnnRd_YrYUlnX8tRlrO9sBg/viewform?usp=dialog"
+            target="_blank" rel="noopener">問い合わせフォームを開く</a>
+    </p>
 
     <h2 style="margin-top:24px;">SNSでシェア</h2>
-    <!-- 🚩ここから追加：X共有（現在のページURL＋任意のハッシュタグ） -->
     <p>
         <a id="share-x" class="btn" target="_blank" rel="noopener">Xで共有</a>
-        <!-- 例：#理工展 #謎解き などを追記 -->
     </p>
-    <!-- 🚩ここまで追加 -->
-    <p class="small muted">© 2025 理工展 謎解きチーム ←追記箇所🚩</p>
+
+    <p class="small muted">© 2025 理工展 LabyrinthFactory</p>
 </div>
